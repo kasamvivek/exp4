@@ -1,6 +1,6 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import ThemeToggle from "./ThemeToggle";
 
 function NavigationBar() {
   return (
@@ -10,12 +10,13 @@ function NavigationBar() {
           Vivek Portfolio
         </Navbar.Brand>
 
-        <Nav className="ms-auto">
+        <Nav className="ms-auto align-items-center">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
           <Nav.Link as={Link} to="/about">About</Nav.Link>
           <Nav.Link as={Link} to="/services">Services</Nav.Link>
           <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
           <Nav.Link as={Link} to="/analytics">Analytics</Nav.Link>
+          <ThemeToggle />
         </Nav>
       </Container>
     </Navbar>
