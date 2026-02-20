@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Experiment 4 - React Hooks: useContext, useReducer, useMemo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🚀 Live Demo
+[24BAI70214-4-kasamvivek-reddy.vercel.app](https://24bai70214-4-kasamvivek-reddy.vercel.app)
 
-## Available Scripts
+## 📌 Overview
+This experiment is an extension of Experiment 3 (Multi-page React application using React Router).
 
-In the project directory, you can run:
+Experiment 4 enhances the application by implementing global state management and performance optimization using advanced React Hooks.
 
-### `npm start`
+## ✨ New Features Added in Experiment 4
+- ✅ `useContext` – Implemented Context API for global state management
+- ✅ `useReducer` – Structured state handling with multiple reducer actions
+- ✅ `useMemo` – Optimized performance for derived calculations
+- ✅ New Analytics Page added using React Router
+- ✅ Dynamic Skill Dashboard with real-time calculations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📁 Folder Structure
+src/
+├── components/
+│ ├── Navbar.jsx
+│ └── ThemeToggle.jsx
+├── context/
+│ └── AppContext.jsx
+├── reducer/
+│ └── appReducer.js
+├── pages/
+│ ├── Home.jsx
+│ ├── About.jsx
+│ ├── Contact.jsx
+│ ├── Services.jsx
+│ └── Analytics.jsx
+├── App.jsx
+├── App.css
+└── index.css
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 📸 Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🏠 Home Page
+![Home](screenshots/HomePage.png)
 
-### `npm run build`
+### 📊 Analytics Page
+![Analytics](screenshots/Analytics.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 📩 Contact Page
+![Contact](screenshots/ContactMe.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 👤 About Page
+![About](screenshots/AboutMe.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🛠 Services Page
+![Services](screenshots/MyServices.png)
 
-### `npm run eject`
+## 🛠️ Tech Stack
+- React.js
+- React Router DOM
+- Context API (`useContext`)
+- useReducer
+- useMemo
+- React Bootstrap
+- CSS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 👤 Author
+- **Name:** Kasam Vivek Reddy
+- **UID:** 24BAI70214
+- **Course:** B.Tech Artificial Intelligence
