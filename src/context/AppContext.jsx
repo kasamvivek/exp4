@@ -1,13 +1,16 @@
-import { createContext, useReducer } from "react";
-import { appReducer, initialState } from "../reducer/appReducer";
+import { createContext, useState } from "react";
 
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const [state, dispatch] = useReducer(appReducer, initialState);
+  const [theme, setTheme] = useState("dark");
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
+    <AppContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </AppContext.Provider>
   );

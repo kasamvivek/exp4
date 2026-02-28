@@ -16,6 +16,7 @@ function NavigationBar() {
           <Nav.Link as={Link} to="/services">Services</Nav.Link>
           <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
           <Nav.Link as={Link} to="/analytics">Analytics</Nav.Link>
+          <Nav.Link as={Link} to="/reports">Reports</Nav.Link>
           <ThemeToggle />
         </Nav>
       </Container>

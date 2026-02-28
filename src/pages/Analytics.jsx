@@ -1,21 +1,23 @@
-import { useContext, useMemo } from "react";
-import { AppContext } from "../context/AppContext";
+import { useMemo } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { removeSkill } from "../redux/slices/appSlice";
 import { Container, Row, Col, Card, ProgressBar, Button } from "react-bootstrap";
 
 function Analytics() {
-  const { state, dispatch } = useContext(AppContext);
+  const skills = useSelector((state) => state.app.skills);
+  const dispatch = useDispatch();
 
-  const totalSkills = useMemo(() => state.skills.length, [state.skills]);
+  const totalSkills = useMemo(() => skills.length, [skills]);
 
   const strongSkills = useMemo(
-    () => state.skills.filter(skill => skill.level >= 80).length,
-    [state.skills]
+    () => skills.filter((skill) => skill.level >= 80).length,
+    [skills]
   );
 
   const averageSkill = useMemo(() => {
-    const total = state.skills.reduce((sum, skill) => sum + skill.level, 0);
+    const total = skills.reduce((sum, skill) => sum + skill.level, 0);
     return totalSkills === 0 ? 0 : Math.round(total / totalSkills);
-  }, [state.skills, totalSkills]);
+  }, [skills, totalSkills]);
 
   return (
     <div
@@ -40,52 +42,28 @@ function Analytics() {
 
         <Row className="mb-5">
           <Col md={4}>
-            <Card
-              className="p-4 text-center"
-              style={{
-                backgroundColor: "#1e293b",
-                border: "none",
-                borderRadius: "15px",
-                color: "#ffffff"
-              }}
-            >
+            <Card className="p-4 text-center" style={{ backgroundColor: "#1e293b", border: "none", borderRadius: "15px", color: "#ffffff" }}>
               <h6>Total Skills</h6>
               <h2 style={{ color: "#38bdf8" }}>{totalSkills}</h2>
             </Card>
           </Col>
 
           <Col md={4}>
-            <Card
-              className="p-4 text-center"
-              style={{
-                backgroundColor: "#1e293b",
-                border: "none",
-                borderRadius: "15px",
-                color: "#ffffff"
-              }}
-            >
+            <Card className="p-4 text-center" style={{ backgroundColor: "#1e293b", border: "none", borderRadius: "15px", color: "#ffffff" }}>
               <h6>Strong Skills (80%+)</h6>
               <h2 style={{ color: "#22c55e" }}>{strongSkills}</h2>
             </Card>
           </Col>
 
           <Col md={4}>
-            <Card
-              className="p-4 text-center"
-              style={{
-                backgroundColor: "#1e293b",
-                border: "none",
-                borderRadius: "15px",
-                color: "#ffffff"
-              }}
-            >
+            <Card className="p-4 text-center" style={{ backgroundColor: "#1e293b", border: "none", borderRadius: "15px", color: "#ffffff" }}>
               <h6>Average Skill Level</h6>
               <h2 style={{ color: "#f59e0b" }}>{averageSkill}%</h2>
             </Card>
           </Col>
         </Row>
 
-        {state.skills.map(skill => (
+        {skills.map((skill) => (
           <Card
             key={skill.id}
             className="mb-4 p-4"
@@ -103,10 +81,7 @@ function Analytics() {
 
             <ProgressBar
               now={skill.level}
-              style={{
-                height: "12px",
-                backgroundColor: "#334155"
-              }}
+              style={{ height: "12px", backgroundColor: "#334155" }}
               variant="info"
               className="mt-3"
             />
@@ -115,9 +90,7 @@ function Analytics() {
               variant="outline-danger"
               size="sm"
               className="mt-3"
-              onClick={() =>
-                dispatch({ type: "REMOVE_SKILL", payload: skill.id })
-              }
+              onClick={() => dispatch(removeSkill(skill.id))}
             >
               Remove
             </Button>

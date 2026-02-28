@@ -1,3 +1,4 @@
+import Reports from "./pages/Reports";
 import { Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -9,11 +10,11 @@ import { useContext } from "react";
 import { AppContext } from "./context/AppContext";
 
 function App() {
-  const { state } = useContext(AppContext);
+  const { theme } = useContext(AppContext);
 
   const appStyle = {
-    backgroundColor: state.theme === "light" ? "#f4f6f8" : "#121212",
-    color: state.theme === "light" ? "#000000" : "#ffffff",
+    backgroundColor: theme === "light" ? "#f4f6f8" : "#121212",
+    color: theme === "light" ? "#000000" : "#ffffff",
     minHeight: "100vh",
     transition: "all 0.3s ease"
   };
@@ -27,6 +28,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/analytics" element={<Analytics />} />
+        <Route path="/reports" element={<Reports />} />
       </Routes>
     </div>
   );
